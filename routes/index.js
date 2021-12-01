@@ -13,8 +13,8 @@ var storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         var chuoi=file.originalname;
-        var duoi=file.originalname.slice(chuoi.length-4,chuoi.length);
-        if(duoi==='.jpg'){
+        var duoi=file.originalname.slice(chuoi.length-5,chuoi.length);
+        if(duoi==='.jpeg'){
             const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
             cb(null, file.fieldname + '-' + uniqueSuffix+duoi)
         }else {
