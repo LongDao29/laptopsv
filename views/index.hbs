@@ -1,0 +1,315 @@
+<form action="addBill" method="post" enctype="application/x-www-form-urlencoded" style="display: none">
+    <div class="form-group">
+        <label>ID hóa đơn</label>
+        <input type="text" class="form-control" placeholder="ID" name="id_bill">
+    </div>
+    <div class="form-group">
+        <label>Số điện thoại</label>
+        <input type="text" class="form-control" placeholder="Số điện thoại" name="phone_number">
+    </div>
+<!--    <div class="form-group">-->
+<!--        <label>Danh sách sản phẩm</label>-->
+<!--        <input type="text" class="form-control" placeholder="Danh sách sản phẩm" name="item_list[]">-->
+<!--    </div>-->
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Mã sản phẩm: </label>
+        <input  class="form-control" name="item_list[][id_product]">
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Tên sản phẩm: </label>
+        <input class="form-control" name="item_list[][name_product]">
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Giá sản phẩm: </label>
+        <input  class="form-control" name="item_list[][price_product]" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Thương hiệu: </label>
+        <input class="form-control" name="item_list[][brand_product]" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Màn hình: </label>
+        <input class="form-control" name="item_list[][display]" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Hệ điều hành: </label>
+        <input class="form-control" name="item_list[][os]" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Trọng lượng: </label>
+        <input class="form-control" name="item_list[][front_camera]" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Kích thước: </label>
+        <input class="form-control" name="item_list[][behind_camera]" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Thông số CPU: </label>
+        <input class="form-control" name="item_list[][cpu]" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Thông số Ram: </label>
+        <input class="form-control" name="item_list[][ram]" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Xuất xứ: </label>
+        <input class="form-control" name="item_list[][rom]" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Card đồ họa: </label>
+        <input class="form-control" name="item_list[][sim]" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Thông số Pin: </label>
+        <input class="form-control" name="item_list[][pin]" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Số lượng: </label>
+        <input type='number' class="form-control" name="item_list[][quantity_stock]" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Số lượng: </label>
+        <input type='number' class="form-control" name="item_list[][quantity_buy]" >
+    </div>
+    <div class="form-group">
+        <label>Tổng giá trị</label>
+        <input type="text" class="form-control" placeholder="Tổng giá trị" name="total_value">
+    </div>
+    <div class="form-group">
+        <label>Trạng Thái</label>
+        <input type="text" class="form-control" placeholder="Trạng Thái" name="status">
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+<form action="removeProductFromCart" method="post" enctype="application/x-www-form-urlencoded" style="display: none">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Số điện thoại</label>
+        <input type="text" class="form-control" placeholder="Phone Number" name="phone_number">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">ID Product</label>
+        <input type="text" class="form-control" placeholder="ID" name="id_product">
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+<form action="updateUserClient" method="post" enctype="application/x-www-form-urlencoded" style="display: none">
+    <div class="form-group">
+        <label>Họ tên: </label>
+        <input class="form-control" name="full_name" value="{{data.full_name}}">
+    </div>
+    <div class="form-group">
+        <label>Số điện thoại: </label>
+        <input  class="form-control" name="phone_number" value="{{data.phone_number}}">
+    </div>
+    <div class="form-group">
+        <label>Mật khẩu: </label>
+        <input class="form-control" name="password" value="{{data.password}}">
+    </div>
+    <div class="form-group">
+        <label>Địa chỉ: </label>
+        <input class="form-control" name="address" value="{{data.address}}">
+    </div>
+
+    <button type="submit" class="btn btn-info" style="margin: 10px">Sửa</button>
+</form>
+<form action="getCart" method="post" enctype="application/x-www-form-urlencoded" style="display: none">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Số điện thoại</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Phone Number" name="phone_number">
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+<form action="addProductToCart" method="post" enctype="application/x-www-form-urlencoded" style="display: none">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Số điện thoại</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Phone Number" name="phone_number">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">ID Product</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="ID" name="id_product">
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+<form action="login" method="post" enctype="application/x-www-form-urlencoded" style="display: none">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Số điện thoại</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Phone Number" name="phone_number">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Password</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Password" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+<form action="createUser" method="post" enctype="application/x-www-form-urlencoded" style="display: none">
+    <hr>
+    <h2 style="text-align: center">Tạo tài khoản</h2>
+    <div class="form-group" style="margin-top: 10px">
+        <label for="exampleInputEmail1">Họ tên</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Họ tên" name="full_name">
+    </div>
+    <div class="form-group" style="margin-top: 10px">
+        <label for="exampleInputEmail1">Số điện thoại</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Số điện thoại" name="phone_number">
+    </div>
+    <div class="form-group" style="margin-top: 10px">
+        <label for="exampleInputPassword1">Mật khẩu</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu" name="password">
+    </div>
+    <div class="form-group" style="margin-top: 10px">
+        <label for="exampleInputPassword1">Địa chỉ</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Địa chỉ" name="address">
+    </div>
+    <button type="submit" class="btn btn-primary"  style="margin-top: 20px">Thêm tài khoản</button>
+</form>
+<form action="/" method="post" name="abc" onsubmit="return validateForm()" enctype="multipart/form-data">
+    <hr>
+    <h2 style="text-align: center">Thêm sản phẩm</h2>
+
+    <div class="form-row">
+        <div class="form-group col-sm-6" style="margin-top: 10px">
+            <label>Mã sản phẩm: </label>
+            <input  class="form-control" name="id_product">
+        </div>
+        <div class="form-group col-sm-6" style="margin-top: 10px">
+            <label>Tên sản phẩm: </label>
+            <input class="form-control" name="name_product">
+        </div>
+    </div>
+
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Giá sản phẩm: </label>
+        <input  class="form-control" name="price_product" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Thương hiệu: </label>
+        <input class="form-control" name="brand_product" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Màn hình: </label>
+        <input class="form-control" name="display" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Hệ điều hành: </label>
+        <input class="form-control" name="os" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Trọng lượng: </label>
+        <input class="form-control" name="front_camera" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Kích thước: </label>
+        <input class="form-control" name="behind_camera" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Thông số CPU: </label>
+        <input class="form-control" name="cpu" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Thông số Ram: </label>
+        <input class="form-control" name="ram" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Xuất xứ: </label>
+        <input class="form-control" name="rom" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Card đồ họa: </label>
+        <input class="form-control" name="sim" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Thông số Pin: </label>
+        <input class="form-control" name="pin" >
+    </div>
+    <div class="form-group col-sm-6" style="margin-top: 10px">
+        <label>Số lượng: </label>
+        <input type='number' class="form-control" name="quantity_stock" >
+    </div>
+    <label style="margin-top: 10px"> Ảnh sản phẩm: </label>
+    <input class="form-control" name="avatar11" multiple type="file" >
+    <button class="btn btn-primary" type="submit" style="padding: 5px 20px 5px 20px; margin-top: 20px">Lưu</button>
+
+    <div class="row " style="margin-top: 20px">
+        <hr>
+        <h2 style="text-align: center">Danh sách sản phẩm</h2>
+    {{#each products}}
+        <div class="col-3 mt-2 border border-secondary border-2" style="margin-bottom: 10px; margin-right: 10px; width: 32%">
+           <div class="col mt-2" >
+               <div name="id" hidden>{{this._id}}</div>
+               <div><label>Tên sản phẩm: </label> {{this.name_product}}</div>
+               <div><label>Giá sản phẩm: </label> {{this.price_product}}</div>
+               <div><label>Thương hiệu: </label> {{this.brand_product}}</div>
+           </div>
+            <div class="col mt-2 text-center">
+                <div class="image d-inline-block" style="width: 90px; height: 70px"><img style="width: 90px; height: 70px" src="images/{{this.image1}}"></div>
+                <div class="image d-inline-block" style="width: 90px; height: 70px"><img style="width: 90px; height: 70px" src="images/{{this.image2}}"></div>
+                <div class="image d-inline-block" style="width: 90px; height: 70px"><img style="width: 90px; height: 70px" src="images/{{this.image3}}"></div>
+            </div>
+            <div class="col mt-2 text-center">
+           <a type="button" class="btn btn-info" href="./updateProduct/{{this._id}}" style="width: 100px; margin-bottom: 10px">Sửa</a>
+
+           <a type="button" class="btn btn-dark" style="width: 100px; margin-bottom: 10px" onclick="return confirm('Bạn có muốn xóa sản phẩm?')" href="/deleteProduct/{{this._id}}">Xóa</a>
+            </div>
+        </div>
+    {{/each}}
+    </div>
+
+    <div class="row " style="margin-top: 20px">
+        <hr>
+        <h2 style="text-align: center">Danh sách tài khoản</h2>
+        {{#each users}}
+            <div class="col-3 mt-2 border border-secondary border-2" style="margin-bottom: 10px; margin-right: 10px; width: 32%">
+                <div class="col mt-2" >
+                    <div name="id" hidden> {{this._id}}</div>
+                    <div><label>Họ tên: </label> {{this.full_name}}</div>
+                    <div><label>Số điện thoại: </label> {{this.phone_number}}</div>
+                    <div><label>Địa chỉ: </label> {{this.address}}</div>
+                </div>
+                <div class="col mt-2 text-center">
+                    <a type="button" class="btn btn-info" href="./getUserDetails/{{this._id}}" style="width: 100px; margin-bottom: 10px">Chi tiết</a>
+
+                    <a type="button" class="btn btn-dark" style="width: 100px; margin-bottom: 10px" onclick="return confirm('Bạn có muốn xóa tài khoản?')" href="/deleteUser/{{this._id}}">Xóa</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+
+    <div class="row " style="margin-top: 20px">
+        <hr>
+        <h2 style="text-align: center">Danh sách hóa đơn</h2>
+        {{#each bills}}
+            <div class="col-3 mt-2 border border-secondary border-2" style="margin-bottom: 10px; margin-right: 10px; width: 32%">
+                <div class="col mt-2" >
+                    <div name="id" hidden> {{this._id}}</div>
+                    <div><label>Mã hóa đơn: </label> {{this.id_bill}}</div>
+                    <div><label>Số điện thoại: </label> {{this.phone_number}}</div>
+                    <div><label>Thanh toán: </label> {{this.total_value}}</div>
+                    <div><label>Trạng thái: </label> {{this.status}}</div>
+                </div>
+                <div class="row" style="margin-left: 10px; margin-right: 10px; margin-top: 10px">
+                    <a type="button" class="btn btn-outline-primary" href="./getBillDetails/{{this._id}}" style="margin-bottom: 10px;">Xem Chi tiết</a>
+                </div>
+                <div class="row" style="margin-left: 10px; margin-right: 10px">
+                    <a type="button" class="col btn btn-success" href="./confirmBill/{{this._id}}" style="margin-bottom: 10px; margin-right: 10px">Xác nhận đơn hàng</a>
+                    <a type="button" class="col btn btn-danger" href="./cancleBill/{{this._id}}" style="margin-bottom: 10px">Hủy đơn hàng</a>
+                </div>
+                <div class="row" style="margin-left: 10px; margin-right: 10px">
+                    <a type="button" class="col btn btn-warning" href="./deliveryBill/{{this._id}}" style="margin-bottom: 10px; margin-right: 10px">Giao hàng</a>
+                    <a type="button" class="col btn btn-success" href="./doneBill/{{this._id}}" style="margin-bottom: 10px">Hoàn thành</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</form>
+
+<!--<form action="/timkiem" method="post">-->
+<!--    <input class="form-control" name="timkiemMin" placeholder="Giá trị min" style="width: 200px; margin-bottom: 30px">-->
+<!--    <input class="form-control" name="timkiemMax" placeholder="Giá trị max" style="width: 200px; margin-bottom: 10px">-->
+
+<!--    <button class="btn btn-info" type="submit">Tìm kiếm</button>-->
+<!--</form>-->
+<script>
+    // $.extend(data, {isSampleString: function() {
+    //         return this.sampleString ==  'This is a string';}
+    // });
+</script>

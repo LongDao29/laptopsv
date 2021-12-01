@@ -1,0 +1,80 @@
+ <form action="/updateProduct" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="_id" value="{{dulieu._id}}">
+<!--    <input type="hidden" name="id_product" value="{{dulieu.id_product}}">-->
+     <div class="form-group">
+         <label>Mã sản phẩm: </label>
+         <input class="form-control" name="id_product" value="{{dulieu.id_product}}" placeholder="Tên sản phẩm" readonly>
+     </div>
+    <div class="form-group">
+        <label>Tên sản phẩm: </label>
+        <input class="form-control" name="name_product" value="{{dulieu.name_product}}" placeholder="Tên sản phẩm">
+    </div>
+    <div class="form-group">
+        <label>Giá sản phẩm: </label>
+        <input  class="form-control" name="price_product" value="{{dulieu.price_product}}" placeholder="Giá sản phẩm">
+    </div>
+    <div class="form-group">
+        <label>Thương hiệu: </label>
+        <input class="form-control" name="brand_product" value="{{dulieu.brand_product}}" placeholder="Thương hiệu">
+    </div>
+    <div class="form-group">
+        <label>Màn hình: </label>
+        <input class="form-control" name="display" value="{{dulieu.display}}" placeholder="Thông số màn hình">
+    </div>
+    <div class="form-group">
+        <label>Hệ điều hành: </label>
+        <input class="form-control" name="os" value="{{dulieu.os}}" placeholder="Hệ điều hành">
+    </div>
+    <div class="form-group">
+        <label>Trọng lượng </label>
+        <input class="form-control" name="front_camera" value="{{dulieu.front_camera}}" placeholder="Thông số camera trước">
+    </div>
+    <div class="form-group">
+        <label>Kích thước </label>
+        <input class="form-control" name="behind_camera" value="{{dulieu.behind_camera}}" placeholder="Thông số camera sau">
+    </div>
+    <div class="form-group">
+        <label>Thông số CPU: </label>
+        <input class="form-control" name="cpu" value="{{dulieu.cpu}}" placeholder="Thông số CPU">
+    </div>
+    <div class="form-group">
+        <label>Thông số Ram: </label>
+        <input class="form-control" name="ram" value="{{dulieu.ram}}" placeholder="Ram">
+    </div>
+    <div class="form-group">
+        <label>Xuất xứ: </label>
+        <input class="form-control" name="rom" value="{{dulieu.rom}}" placeholder="Rom">
+    </div>
+    <div class="form-group">
+        <label>Card đồ họa: </label>
+        <input class="form-control" name="sim" value="{{dulieu.sim}}" placeholder="Sim">
+    </div>
+    <div class="form-group">
+        <label>Thông số Pin: </label>
+        <input class="form-control" name="pin" value="{{dulieu.pin}}" placeholder="Pin">
+    </div>
+     <div class="form-group">
+         <label>Số lượng: </label>
+         <input type='number' class="form-control" name="quantity_stock" value="{{dulieu.quantity_stock}}" placeholder="Số lượng">
+     </div>
+    <div class="row" style="width: 150px; margin-top: 10px">
+        <a class="col myimage"  onclick="return confirm('Bạn có muốn xóa ảnh?')" href="/deleteImg1/{{dulieu._id}}">
+            <img class="col" style="width: 100px" src="images/{{dulieu.image1}}">
+            <span class="delete">Delete</span>
+        </a>
+    </div>
+    <div class="row" style="width: 150px; margin-top: 10px">
+        <a class="col myimage"  onclick="return confirm('Bạn có muốn xóa ảnh?')" href="/deleteImg2/{{dulieu._id}}">
+            <img class="col" style="width: 100px" src="images/{{dulieu.image2}}">
+            <span class="delete">Delete</span>
+        </a>
+    </div>
+    <div class="row" style="width: 150px; margin-top: 10px">
+        <a class="col myimage"  onclick="return confirm('Bạn có muốn xóa ảnh?')" href="/deleteImg3/{{dulieu._id}}">
+            <img class="col" style="width: 100px" src="images/{{dulieu.image3}}">
+            <span class="delete">Delete</span>
+        </a>
+    </div>
+
+    <button type="submit" class="btn btn-info" style="margin: 10px">Sửa</button>
+</form>

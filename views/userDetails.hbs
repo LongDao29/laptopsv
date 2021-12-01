@@ -1,0 +1,45 @@
+<form action="/updateUser" method="post" enctype="application/x-www-form-urlencoded">
+    <input type="hidden" name="_id" value="{{data._id}}">
+    <div class="form-group">
+        <label>Họ tên: </label>
+        <input class="form-control" name="full_name" value="{{data.full_name}}">
+    </div>
+    <div class="form-group">
+        <label>Số điện thoại: </label>
+        <input  class="form-control" name="phone_number" value="{{data.phone_number}}" readonly>
+    </div>
+    <div class="form-group">
+        <label>Mật khẩu: </label>
+        <input class="form-control" name="password" value="{{data.password}}">
+    </div>
+    <div class="form-group">
+        <label>Địa chỉ: </label>
+        <input class="form-control" name="address" value="{{data.address}}">
+    </div>
+
+    <button type="submit" class="btn btn-info" style="margin: 10px">Sửa</button>
+</form>
+<div class="row " style="margin-top: 20px">
+    <hr>
+    <h2 style="text-align: center">Danh sách sản phẩm trong giỏ hàng</h2>
+    {{#each products}}
+        <div class="col-3 mt-2 border border-danger border-4" style="margin-bottom: 10px; margin-right: 10px; width: 32%">
+            <div class="col mt-2" >
+                <div name="id" hidden>{{this._id}}</div>
+                <div><label>Tên sản phẩm: </label> {{this.name_product}}</div>
+                <div><label>Giá sản phẩm: </label> {{this.price_product}}</div>
+                <div><label>Thương hiệu: </label> {{this.brand_product}}</div>
+            </div>
+            <div class="col mt-2 text-center" style="margin-bottom: 10px">
+                <div class="image d-inline-block" style="width: 90px; height: 70px"><img style="width: 90px; height: 70px" src="images/{{this.image1}}"></div>
+                <div class="image d-inline-block" style="width: 90px; height: 70px"><img style="width: 90px; height: 70px" src="images/{{this.image2}}"></div>
+                <div class="image d-inline-block" style="width: 90px; height: 70px"><img style="width: 90px; height: 70px" src="images/{{this.image3}}"></div>
+            </div>
+<!--            <div class="col mt-2 text-center">-->
+<!--                <a type="button" class="btn btn-info" href="./updateProduct/{{this._id}}" style="width: 100px; margin-bottom: 10px">Sửa</a>-->
+
+<!--                <a type="button" class="btn btn-dark" style="width: 100px; margin-bottom: 10px" onclick="return confirm('Bạn có muốn xóa sản phẩm?')" href="/deleteProduct/{{this._id}}">Xóa</a>-->
+<!--            </div>-->
+        </div>
+    {{/each}}
+</div>

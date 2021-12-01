@@ -1,0 +1,50 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+img[src="images/"] {
+  display: none;
+}
+.myimage {
+  position: relative;
+}
+.myimage:hover .delete{
+  display: block;
+}
+.delete{
+  padding: 5px;
+  border-radius: 5px;
+  background-color: aliceblue;
+  color: black;
+  position: absolute;
+  top: 20px;
+  left: 32px;
+  display: none;
+}
+
+/*Page Login*/
+.simple-login-container{
+  width:300px;
+  max-width:100%;
+  margin:50px auto;
+}
+.simple-login-container h2{
+  text-align:center;
+  font-size:20px;
+}
+
+.simple-login-container .btn-login{
+  background-color:#FF5964;
+  color:#fff;
+  margin:auto;
+  display:block;
+
+}
+a{
+  color:#fff;
+}
+
